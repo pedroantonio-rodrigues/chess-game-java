@@ -15,10 +15,10 @@ public class Position {
 	public void setRow(int row) {
 		this.row = row;
 	}
-	public int getColor() {
+	public int getColumn() {
 		return column;
 	}
-	public void setColor(int column) {
+	public void setColumn(int column) {
 		this.column = column;
 	}
 	
