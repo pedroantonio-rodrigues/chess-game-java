@@ -13,6 +13,11 @@ public class Queen extends ChessPiece {
 	public String toString() {
 		return "Q";
 	}
+	@Override
+	public boolean[][] possibleMoves() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }
