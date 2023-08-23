@@ -2,6 +2,7 @@ package chess;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import boardgame.Board;
 import boardgame.Piece;
@@ -143,7 +144,7 @@ public class ChessMatch {
 		throw new IllegalStateException("there is no " + color + "king on the board");
 	}
 	private boolean testCheck(Color color){
-		Position kingPosition = king(color).getChessPosition().toPosition();
+		Position kingPosition = King(color).getChessPosition().toPosition();
 		List<Piece> opponentPieces = piecesOnTheBoard.stream().filter(x -> ((ChessPiece)x).getColor() == opponent(color)).collect(Collectors.toList());
 		for (Piece p : opponentPieces){
 			boolean[][] mat = p.possibleMoves();
@@ -162,9 +163,9 @@ public class ChessMatch {
 		for (Piece p : list){
 			boolean [][] mat = p.possibleMoves();
 			for (int i = 0; i < board.getRows(); i++){
-				for (int j = 0 < board.getColumns(); j++){
+				for (int j = 0; j < board.getColumns(); j++){
 					if (mat[i][j]){
-						Position source = (ChessPiece)p).getChessPosition();
+						Position source = (ChessPiece) p.getChessPosition();
 						Position target = new Position(i, j);
 						Piece capturedPiece = makeMove(source, target);
 						boolean testCheck = testCheck(color);
