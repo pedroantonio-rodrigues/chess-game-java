@@ -62,6 +62,7 @@ public class ChessMatch {
 		return board.piece(position).possibleMoves();
 	}
 
+
 	public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
 		Position source = sourcePosition.toPosition();
 		Position target = targetPosition.toPosition();
@@ -221,6 +222,7 @@ public class ChessMatch {
 		placeNewPiece('g', 7, new Pawn(board, Color.BLACK));
 		placeNewPiece('h', 7, new Pawn(board, Color.BLACK));
 	
-		}
+		
 	}
+}
 
